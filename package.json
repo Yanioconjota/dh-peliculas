@@ -1,0 +1,23 @@
+{
+  "name": "dh-peliculas",
+  "version": "1.0.0",
+  "description": "node exercise to filter movies from JSON files",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yanioconjota/dh-peliculas.git"
+  },
+  "author": "Janio Isacura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yanioconjota/dh-peliculas/issues"
+  },
+  "homepage": "https://github.com/Yanioconjota/dh-peliculas#readme",
+  "dependencies": {
+    "open": "^7.0.3"
+  }
+}
