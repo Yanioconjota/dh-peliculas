@@ -1,52 +1,42 @@
 const http = require('http'),
-      open = require('open'),
-      hostname = '127.0.0.1',
-      port = '3030';
+      // open = require('open'),
+      hostname = 'localhost',
+      port = '3030',
+      home = require('./src/homePage'),
+      enCartelera = require('./src/enCartelera'),
+      masVotadas = require('./src/masVotadas'),
+      contacto = require('./src/contacto'),
+      faq = require('./src/preguntasFrecuentes'),
+      sucursales = require('./src/sucursales');
 
 http.createServer((req, res) => {
   // Route System
+   res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
   switch (req.url) {
     case '/':
-      res.writeHead(200, {
-        'Content-Type': 'text/plain; charset=utf-8'
-      });
-      res.end('Server running in ' + port + ' port');
+    case 'home':
+      res.end(home);
       break;
 
     case '/en-cartelera':
-      res.writeHead(200, {
-        'Content-Type': 'text/plain; charset=utf-8'
-      });
-      res.end('Cartelera');
+      res.end(enCartelera);
       break;
     
     case '/mas-votadas':
-      res.writeHead(200, {
-        'Content-Type': 'text/plain; charset=utf-8'
-      });
-      res.end('Mas votadas');
+      res.end(masVotadas);
       break;
     
     case '/sucursales':
-      res.writeHead(200, {
-        'Content-Type': 'text/plain; charset=utf-8'
-      });
-      res.end('Scursales');
+      res.end(sucursales);
       break;
 
     case '/contacto':
-      res.writeHead(200, {
-        'Content-Type': 'text/plain; charset=utf-8'
-      });
-      res.end('Scursales');
+      res.end(contacto);
       break;
     
       case '/preguntas-frecuentes':
       case '/faq':
-      res.writeHead(200, {
-        'Content-Type': 'text/plain; charset=utf-8'
-      });
-      res.end('FAQ');
+      res.end(faq);
       break;
 
     default:
@@ -55,5 +45,5 @@ http.createServer((req, res) => {
   }
 }).listen(port,  hostname, () => {
   console.log('Server running in ' + port + ' port');
-  open('http://' + hostname + ':' + port);
+  //open('http://' + hostname + ':' + port);
 });
